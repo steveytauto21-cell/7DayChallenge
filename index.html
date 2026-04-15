@@ -1,0 +1,311 @@
+import { useState } from "react";
+
+const days = [
+  {
+    day: 1,
+    title: "Foundation & Weak Foot Activation",
+    theme: "LEFT FOOT AWAKENING",
+    color: "#00ff87",
+    morning: {
+      title: "Morning Athlete Workout",
+      duration: "50-60 min",
+      warmup: [
+        { name: "Dynamic Hip Circles", sets: "2x10 each direction", cue: "Open hips fully, hands on hips" },
+        { name: "Leg Swings (fwd/back)", sets: "2x15 each leg", cue: "Hold wall, controlled swing" },
+        { name: "Ankle Rotations", sets: "2x20 each", cue: "Full range, slow circles" },
+        { name: "High Knees March", sets: "2x20m", cue: "Drive knee above hip" },
+      ],
+      strength: [
+        { name: "Bodyweight Squat", sets: "4x15", cue: "Knees over toes, chest tall" },
+        { name: "Single-Leg Glute Bridge", sets: "3x12 each", cue: "Squeeze glute at top, slow lower" },
+        { name: "Lateral Band Walk (no band: wide squat walk)", sets: "3x12 each way", cue: "Stay low, toes forward" },
+        { name: "Copenhagen Plank Hold", sets: "3x20s each", cue: "Adductor strength – key for kicking" },
+        { name: "Nordic Hamstring Curl (anchor feet under bed)", sets: "3x6", cue: "Most proven hamstring injury prevention" },
+        { name: "Explosive Step-Up (chair)", sets: "3x10 each", cue: "Drive with full foot, pump arms" },
+        { name: "Push-Ups", sets: "3x15", cue: "Full range, core tight" },
+        { name: "Plank", sets: "3x40s", cue: "Posterior tilt, no hips sagging" },
+      ],
+      stretch: [
+        { name: "90/90 Hip Stretch", sets: "2x60s each side", cue: "Proven hip mobility drill – tall spine" },
+        { name: "Pigeon Pose", sets: "2x45s each", cue: "Glute/hip flexor release" },
+        { name: "Standing Hamstring Stretch", sets: "2x30s", cue: "Slight knee bend, hinge at hip" },
+        { name: "Couch Stretch (quad/hip flexor)", sets: "2x45s each", cue: "Tuck pelvis under – huge for power" },
+        { name: "Calf Raises + Stretch", sets: "2x15 raise + 30s stretch", cue: "Eccentric lowering – Achilles health" },
+        { name: "Thoracic Rotation (seated)", sets: "2x10 each", cue: "Rotate from mid-back, not neck" },
+      ],
+    },
+    afternoon: {
+      title: "Ball Training Session",
+      duration: "50-60 min",
+      sections: [
+        {
+          name: "🔥 Rondos & Touch Activation (10 min)",
+          drills: [
+            { drill: "Sole rolls – LEFT FOOT ONLY", reps: "3x45s", tip: "Lamine Yamal's base – sole mastery creates instant control under pressure" },
+            { drill: "Toe taps on ball – both feet", reps: "3x30s", tip: "Keep ball central, stand tall, rhythmic pace" },
+            { drill: "Inside-outside tap LEFT only", reps: "3x30s", tip: "Neymar foundation – left foot inside-out motion = dribble unlock" },
+          ]
+        },
+        {
+          name: "⚡ Weak Foot Isolation (15 min)",
+          drills: [
+            { drill: "LEFT foot wall passes (1-touch)", reps: "4x60s", tip: "Stand 3 ft from wall. Strike through middle of ball. Lock ankle." },
+            { drill: "LEFT instep drive (stationary)", reps: "4x60s", tip: "Plant foot beside ball, swing through, strike laces. Proven: 15 min daily = 80% improvement in 4 weeks" },
+            { drill: "LEFT foot stop-and-go dribble in 5x10 space", reps: "5x45s", tip: "Use full space. Stop with sole. Explode. Direction change every 2-3 touches" },
+            { drill: "LEFT foot figure-8 around 2 objects", reps: "4x1min", tip: "Objects 5ft apart. Forces inside & outside left foot movement. Doku does this obsessively" },
+          ]
+        },
+        {
+          name: "🕹️ Technical Skill & Dribbling (20 min)",
+          drills: [
+            { drill: "La Croqueta (inside-inside)", reps: "5x45s", tip: "Olise's #1 weapon. Transfer ball inside-to-inside at speed. Quick hips." },
+            { drill: "Elastico (Neymar)", reps: "5x45s", tip: "Outside push → inside snap in ONE motion. Start slow, then explode." },
+            { drill: "Rapid direction change (toe flick)", reps: "4x45s", tip: "Doku speed move – flick outside of foot, body drops opposite shoulder" },
+            { drill: "Cruyff turn in tight space", reps: "4x45s", tip: "Receive, drag behind standing foot, explode. Works in 5x10 perfectly." },
+            { drill: "Step-over into LEFT foot exit", reps: "5x1min", tip: "Classic Neymar. Step over RIGHT, exit with LEFT. Forces left foot engagement." },
+          ]
+        },
+        {
+          name: "🎯 Ball Mastery Finisher (10 min)",
+          drills: [
+            { drill: "Maradona spin (360°)", reps: "4x45s", tip: "Drag with sole, rotate body 180°, pull other direction. In small space = elite." },
+            { drill: "LEFT foot juggling", reps: "4x1min", tip: "Yamal trained exclusively with weak foot for 2-week stretches. Even 5 juggles per set improves proprioception" },
+            { drill: "Rapid cone slalom (alternating feet)", reps: "5x30s", tip: "Books apart 18 inches. Stay on toes. Minimum 2 touches per cone." },
+          ]
+        },
+      ]
+    }
+  },
+  {
+    day: 2,
+    title: "Explosiveness & First Touch",
+    theme: "DOKU SPEED MOVES",
+    color: "#ff6b35",
+    morning: {
+      title: "Morning Athlete Workout",
+      duration: "50-60 min",
+      warmup: [
+        { name: "Jump Rope Simulation (skip in place)", sets: "3x60s", cue: "Stay on balls of feet, fast cadence" },
+        { name: "Lateral Shuffle Warm-up", sets: "2x20m", cue: "Low center of gravity, quick feet" },
+        { name: "Knee Hugs + Lunge Walk", sets: "2x10 each", cue: "Open hip flexors dynamically" },
+        { name: "Inchworm", sets: "2x8", cue: "Hamstring + shoulder warm-up" },
+      ],
+      strength: [
+        { name: "Jump Squat", sets: "4x12", cue: "Land soft, absorb through hips – plyometric power for explosive dribbling" },
+        { name: "Pistol Squat Progression (assisted)", sets: "3x8 each", cue: "Hold wall. Single leg = Doku-level balance & force" },
+        { name: "Lateral Lunge", sets: "3x12 each", cue: "Sit into hip, keep chest tall. Groin + hip strength" },
+        { name: "Tuck Jumps", sets: "3x10", cue: "Knees to chest. Speed > height" },
+        { name: "Single-Leg Calf Raise (slow eccentric)", sets: "3x15 each", cue: "3 seconds down. Prevents Achilles issues." },
+        { name: "Reverse Lunges", sets: "3x12 each", cue: "Knee to floor. Front leg drives you up." },
+        { name: "Mountain Climbers", sets: "3x30s", cue: "Fast cadence, hips level" },
+        { name: "Dead Bug", sets: "3x10 each", cue: "Core anti-rotation – vital for balance in 1v1s" },
+      ],
+      stretch: [
+        { name: "Deep Squat Hold", sets: "3x45s", cue: "Heels flat, chest up, elbows prying knees" },
+        { name: "World's Greatest Stretch", sets: "2x5 each side", cue: "Lunge + thoracic rotation. #1 proven all-body mobility drill" },
+        { name: "Figure-4 Glute Stretch", sets: "2x45s each", cue: "Lying down, pull opposite knee to chest" },
+        { name: "Seated Groin Stretch (butterfly)", sets: "2x60s", cue: "Elbows press knees down. Wide kicking range." },
+        { name: "Standing IT Band Stretch", sets: "2x30s each", cue: "Cross foot, lean away. Outer knee health." },
+        { name: "Neck Rolls + Shoulder Circles", sets: "2x10 each direction", cue: "Upper body stays loose for body feints" },
+      ],
+    },
+    afternoon: {
+      title: "Ball Training Session",
+      duration: "50-60 min",
+      sections: [
+        {
+          name: "🔥 Activation (8 min)",
+          drills: [
+            { drill: "Two-touch passing (wall) – LEFT dominant", reps: "3x60s", tip: "Left receives, right sets. Then reverse." },
+            { drill: "Sole mastery rolls – alternating", reps: "3x30s", tip: "Smooth transition between feet. Feel the ball." },
+          ]
+        },
+        {
+          name: "⚡ LEFT Foot Power Training (15 min)",
+          drills: [
+            { drill: "LEFT foot long wall drive (6-8 ft)", reps: "5x60s", tip: "Plant beside ball. Follow through. Lock ankle DOWN. Same motion every time = muscle memory" },
+            { drill: "LEFT foot stop-trap from bounce", reps: "4x45s", tip: "Throw ball at wall, trap with LEFT only. Yamal's first touch is 80% left foot." },
+            { drill: "LEFT instep curl (angle approach)", reps: "4x45s", tip: "Approach at 45°. Strike inside laces. Follow through across body. Olise free-kick technique." },
+          ]
+        },
+        {
+          name: "⚡ Explosiveness Drills (20 min)",
+          drills: [
+            { drill: "Stop-and-sprint dribble", reps: "6x30s", tip: "Dribble slow, BURST past imaginary defender, stop. Doku's change-of-pace is elite." },
+            { drill: "Fake shot + exit LEFT", reps: "5x45s", tip: "Wind up right foot, plant, exit left. Pulls defender OFF balance." },
+            { drill: "Rapid shuffle + outside-of-foot cut", reps: "5x45s", tip: "Shuffle laterally, then outside foot cut 90°. Neymar escapes with this constantly." },
+            { drill: "Speed dribble end-to-end in 5x10", reps: "5x1min", tip: "Full sprint each way. Ball maximum 1 touch per foot. FAST." },
+          ]
+        },
+        {
+          name: "🎯 Finisher Combos (12 min)",
+          drills: [
+            { drill: "Combo: Elastico → LEFT exit → sprint", reps: "5x30s", tip: "Chain moves. Elastico, snap left, 3-step burst." },
+            { drill: "Combo: Step-over + Cruyff LEFT", reps: "5x30s", tip: "Step over (right), Cruyff drag (left). Two-move combo that beats any defender." },
+            { drill: "LEFT foot wall volley (throw & volley)", reps: "4x45s", tip: "Toss against wall, volley back LEFT foot only. Builds reaction first touch." },
+          ]
+        },
+      ]
+    }
+  },
+  {
+    day: 3,
+    title: "Creativity & Flair",
+    theme: "NEYMAR MODE ACTIVATED",
+    color: "#a855f7",
+    morning: {
+      title: "Morning Athlete Workout",
+      duration: "50-60 min",
+      warmup: [
+        { name: "Cat-Cow Spine Mobility", sets: "2x15", cue: "Slow breath with each movement" },
+        { name: "Hip Flexor Activation Lunges", sets: "2x10 each", cue: "Front heel down, feel the stretch + fire" },
+        { name: "Side-Lying Hip Abduction", sets: "2x15 each", cue: "Slow, controlled – glute med activation" },
+        { name: "Toy Soldiers", sets: "2x15m", cue: "High kick to opposite hand. Hamstring warm-up." },
+      ],
+      strength: [
+        { name: "Bulgarian Split Squat", sets: "4x10 each", cue: "Rear foot elevated. Develops the single-leg power of professional wingers" },
+        { name: "Glute Bridge March", sets: "3x16 (8 each)", cue: "Hold bridge, march knees. Glute + core stability" },
+        { name: "Side Plank Hip Dip", sets: "3x15 each", cue: "Lower hip to floor, raise. Lateral core = balance in 1v1" },
+        { name: "Box Jumps (use a sturdy step/ledge)", sets: "4x8", cue: "Land quietly. Full hip extension at top." },
+        { name: "Decline Push-Up", sets: "3x12", cue: "Feet elevated. Upper chest + shoulder strength" },
+        { name: "Single-Leg Deadlift (bodyweight)", sets: "3x10 each", cue: "Hinge at hip, rear leg straight behind. Balance + hamstring" },
+        { name: "V-Sit Hold", sets: "3x30s", cue: "Core compression for low center of gravity" },
+      ],
+      stretch: [
+        { name: "Quad Stretch (lying prone)", sets: "2x45s each", cue: "Lie face down, pull heel to glute" },
+        { name: "Hip 90/90 Switch", sets: "2x8 transitions", cue: "Flow between both sides. Hip mobility is #1 for dribbling agility" },
+        { name: "Psoas Release (kneeling lunge + reach)", sets: "2x45s each", cue: "Kneeling, push hip forward, reach same arm up" },
+        { name: "Hamstring Floss (leg swings controlled)", sets: "2x20 each", cue: "Increase range gradually each swing" },
+        { name: "Ankle Dorsiflexion Stretch (knee to wall)", sets: "2x30s each", cue: "Proven to reduce ankle injury + improve push-off" },
+      ],
+    },
+    afternoon: {
+      title: "Ball Training Session",
+      duration: "50-60 min",
+      sections: [
+        {
+          name: "🔥 Juggling Activation (10 min)",
+          drills: [
+            { drill: "LEFT FOOT JUGGLING ONLY", reps: "4x1min", tip: "This is the #1 fastest proven method to build left foot feel. Neymar spent hours doing exactly this." },
+            { drill: "Thigh-left foot-thigh juggle", reps: "3x45s", tip: "Control rhythm between body parts with LEFT as anchor" },
+          ]
+        },
+        {
+          name: "🎩 Signature Flair Moves (20 min)",
+          drills: [
+            { drill: "Rainbow Flick", reps: "5x1min", tip: "Roll up calf, flick heel over head. Neymar's crowd move. Takes 2-3 weeks to master. Start slow." },
+            { drill: "Heel chop (McGeady spin)", reps: "5x45s", tip: "Approach, spin 180° on standing foot, drag ball back. Yamal uses in tight areas." },
+            { drill: "Sombrero Flick (toss over opponent)", reps: "4x45s", tip: "Scoop ball up with sole, flick over head. Requires soft touch = first touch practice" },
+            { drill: "Scissor + double scissor", reps: "5x1min", tip: "One scissor master → double scissors. Speed comes from hip isolation, not whole body" },
+            { drill: "Neymar drag-back turn LEFT foot exit", reps: "5x45s", tip: "Drag back with right sole, turn body, exit LEFT. Trains left in natural move chain." },
+          ]
+        },
+        {
+          name: "🎯 LEFT Foot Precision (15 min)",
+          drills: [
+            { drill: "LEFT foot curved pass to target on wall", reps: "4x1min", tip: "Draw an X on wall with tape. Hit X with LEFT instep curve. Olise pass technique." },
+            { drill: "LEFT outside-of-foot flick pass", reps: "4x45s", tip: "Quick outside left touch to wall. Builds secondary LEFT touch option." },
+            { drill: "LEFT trap + shoot (wall)", reps: "4x1min", tip: "Trap with LEFT, immediately shoot LEFT. One flow. No stopping." },
+          ]
+        },
+        {
+          name: "🔥 Combo Free Session (10 min)",
+          drills: [
+            { drill: "Free dribbling – try every move learned", reps: "10 min", tip: "Put on music. No structure. Just express yourself. This builds creativity. Neymar's coach gave him free sessions every day." },
+          ]
+        },
+      ]
+    }
+  },
+  {
+    day: 4,
+    title: "Active Recovery & Refinement",
+    theme: "RECHARGE & REFINE",
+    color: "#06b6d4",
+    morning: {
+      title: "Morning Recovery Workout",
+      duration: "50-55 min",
+      warmup: [
+        { name: "Foam Roll (or tennis ball)", sets: "Quads, calves, IT band, glutes – 60s each", cue: "Slow roll, pause on tight spots" },
+        { name: "Child's Pose", sets: "3x60s", cue: "Breathe into lower back" },
+        { name: "Thread the Needle", sets: "2x45s each", cue: "Thoracic rotation + shoulder release" },
+      ],
+      strength: [
+        { name: "Slow Bodyweight Squat (5s down)", sets: "3x10", cue: "Eccentric only day. No explosive. Active recovery." },
+        { name: "Wall Sit", sets: "3x45s", cue: "90° angles. Quad endurance." },
+        { name: "Slow Superman Hold", sets: "3x12", cue: "Hold 3s at top. Spinal erector + glute activation" },
+        { name: "Bird-Dog", sets: "3x10 each", cue: "Opposite arm/leg. Core stability without load" },
+        { name: "Resistance Band Pull-Apart (use towel)", sets: "3x20", cue: "Pull towel apart at chest height. Shoulder health." },
+        { name: "Slow Step-Up (no jump)", sets: "3x10 each", cue: "Knee tracking straight. Reinforce mechanics." },
+      ],
+      stretch: [
+        { name: "Full Yoga Flow: Sun Salutation", sets: "4 rounds", cue: "Proven full-body mobility & blood flow" },
+        { name: "Lying Knee-to-Chest", sets: "2x60s each", cue: "Lower back decompression" },
+        { name: "Seated Forward Fold", sets: "3x60s", cue: "Don't bounce. Exhale deeper each time." },
+        { name: "Supine Figure-4 (both sides)", sets: "3x60s", cue: "Hip rotator release" },
+        { name: "Happy Baby Pose", sets: "2x60s", cue: "Groin + inner hip opener" },
+        { name: "Calf + Achilles Stretch (wall)", sets: "3x45s each", cue: "Bent knee version for soleus" },
+        { name: "Wrist + Ankle Circles (joint health)", sets: "2x20 each direction", cue: "Often skipped but vital for longevity" },
+      ],
+    },
+    afternoon: {
+      title: "Technical Refinement Session",
+      duration: "50-60 min",
+      sections: [
+        {
+          name: "🎯 Pure LEFT Foot Day (25 min)",
+          drills: [
+            { drill: "ONLY left foot – no right foot allowed", reps: "Entire first 25 min", tip: "This is called Weak Foot Only Training (WFOT) – proven in youth academies to accelerate weak foot in 2-4 weeks" },
+            { drill: "Left dribble in space", reps: "5x1min", tip: "Inside, outside, sole – explore all surfaces LEFT only" },
+            { drill: "Left foot wall pass (short)", reps: "5x1min", tip: "1-touch. Quick. Controlled." },
+            { drill: "Left foot juggle circuit", reps: "5x45s", tip: "Floor juggles, toe flicks, all LEFT" },
+          ]
+        },
+        {
+          name: "🧠 Slow Technical Refinement (20 min)",
+          drills: [
+            { drill: "SLOW elastico (learn the mechanics)", reps: "4x1min", tip: "Day 4 = slow down moves and feel the correct technique. Speed comes later." },
+            { drill: "Slow rainbow flick technique", reps: "4x1min", tip: "Step by step. Ankle roll up, flick, follow through." },
+            { drill: "SLOW step-over – feel hip rotation", reps: "4x45s", tip: "Isolate each body part. Hip drives step-over power, not just leg." },
+          ]
+        },
+        {
+          name: "🧘 Mental Visualization (10 min)",
+          drills: [
+            { drill: "Sit quietly, visualize using skills in a match", reps: "10 min", tip: "Proven: mental imagery activates same neural pathways as physical practice. Neymar, Messi, Ronaldo all use visualization." },
+          ]
+        },
+      ]
+    }
+  },
+  {
+    day: 5,
+    title: "Speed, Agility & Match Moves",
+    theme: "OLISE ATTACKING PLAY",
+    color: "#f59e0b",
+    morning: {
+      title: "Morning Power Workout",
+      duration: "50-60 min",
+      warmup: [
+        { name: "A-Skips", sets: "2x20m", cue: "Drive knee up, dorsiflexed foot, arm pump" },
+        { name: "B-Skips", sets: "2x20m", cue: "Extend after knee drive. Hamstring activation." },
+        { name: "Lateral High Knees", sets: "2x20m", cue: "Sideways movement. Hip flexors + agility" },
+        { name: "Bounding", sets: "2x20m", cue: "Long explosive strides. Power build-up." },
+      ],
+      strength: [
+        { name: "Explosive Push-Up (clap optional)", sets: "4x10", cue: "Push explosively off floor. Upper body power" },
+        { name: "Speed Skater Jumps", sets: "4x12 each", cue: "Lateral bound. Land on one foot. Absorb soft." },
+        { name: "Sprinter Sit-Up", sets: "3x12", cue: "Sit up fast, drive one knee to chest = core + hip flexor" },
+        { name: "Lateral Box Jump (side-to-side)", sets: "4x8", cue: "Quick touch, no hesitation. Reactive power." },
+        { name: "Triple Hop (single leg)", sets: "3x5 each", cue: "Hop 3x same leg. Distance > height. Proven plyometric for sprint speed" },
+        { name: "Broad Jump", sets: "4x6", cue: "Max distance each jump. Hip extension + arm drive" },
+        { name: "Hollow Body Hold", sets: "3x35s", cue: "Lower back pressed flat. Core anti-extension." },
+      ],
+      stretch: [
+        { name: "Post-Plyometric Static Stretch Protocol", sets: "Full sequence", cue: "Hold each 45-60 seconds" },
+        { name: "Standing Quad Stretch", sets: "2x45s each", cue: "" },
+        { name: "Standing Hamstring (cross-legged hinge)", sets: "2x45s each", cue: "" },
+        { name: "Hip Flexor Deep Lunge", sets: "2x60s each", cue: "Arms overhead to intensify" },
+        { name: "Lateral Hip Stretch (side lunge hold)", sets: "2x45s each", cue: "" },
+        { name: "Prone Cobra", sets: "2x30s", cue: "Hip flexor + core lengthening" },
+        { name: "Knee-to-Chest with Ankle Pull", sets: "2x30s each", cue: "Glut
