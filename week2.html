@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Week 2 — Striker Mastery · Football Elite Training Program</title>
+  <meta name="description" content="Week 2: Days 8-14. Explosive morning conditioning, advanced hip/knee mobility, and afternoon striker-specific training. Finishing, movement, weak foot goals."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#060810;--sur:#0C1018;--card:#111722;
+      --green:#00E87A;--green2:#00C466;--greendim:rgba(0,232,122,.12);
+      --greenglow:rgba(0,232,122,.25);--greenbdr:rgba(0,232,122,.20);
+      --gold:#FFB800;--golddim:rgba(255,184,0,.12);--goldbdr:rgba(255,184,0,.22);
+      --bdr:rgba(255,255,255,.06);--muted:rgba(255,255,255,.42);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{background:var(--bg)}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:#fff;overflow-x:hidden}
+    .display{font-family:'Bebas Neue',sans-serif;letter-spacing:.03em}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .glass-nav{backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(6,8,16,.90);border-bottom:1px solid var(--bdr)}
+    .nav-link{position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s}
+    .nav-link:hover::after,.nav-link.active::after{width:100%}
+    .btn-gold{background:var(--gold);color:var(--bg);border-radius:6px;font-weight:700;letter-spacing:.04em;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;box-shadow:0 4px 22px -4px rgba(255,184,0,.28)}
+    .btn-gold::before{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-20deg);transition:left .5s ease}
+    .btn-gold:hover::before{left:130%}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px -6px rgba(255,184,0,.38)}
+    .btn-ghost{border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);border-radius:6px;font-weight:600;transition:border-color .22s,background .22s,transform .22s}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.38);background:rgba(255,255,255,.05);transform:translateY(-2px)}
+    .green-text{background:linear-gradient(135deg,var(--green),#4DFFAB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .gold-text{background:linear-gradient(135deg,var(--gold),#FFD54F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .sdiv{width:36px;height:2px;background:var(--gold);border-radius:99px}
+    .tag-gold{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--golddim);color:var(--gold);border:1px solid var(--goldbdr)}
+    .tag-green{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--greendim);color:var(--green);border:1px solid var(--greenbdr)}
+    .tag-orange{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,140,0,.12);color:#FF8C00;border:1px solid rgba(255,140,0,.22)}
+    .tag-blue{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(60,130,255,.12);color:#3C82FF;border:1px solid rgba(60,130,255,.22)}
+    .day-card{border-radius:20px;border:1px solid var(--bdr);background:var(--card);overflow:hidden}
+    .drill-item{border-radius:12px;border:1px solid var(--bdr);padding:14px 16px;background:rgba(255,255,255,.025);transition:border-color .22s,background .22s;margin-bottom:8px}
+    .drill-item:hover{border-color:var(--goldbdr);background:var(--golddim)}
+    .exercise-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .exercise-item:last-child{border-bottom:none}
+    .ex-num{width:28px;height:28px;border-radius:8px;background:var(--golddim);border:1px solid var(--goldbdr);color:var(--gold);font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .stretch-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .stretch-item:last-child{border-bottom:none}
+    .st-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+    .timer-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.06);font-size:.68rem;font-weight:600;color:rgba(255,255,255,.55)}
+    .session-header{padding:24px;border-bottom:1px solid rgba(255,255,255,.05)}
+    .session-body{padding:24px}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+    .reveal.in{opacity:1;transform:none}
+    .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+    #mob{display:none}#mob.open{display:block}
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="glass-nav fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-6xl mx-auto px-5 md:px-10 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5 select-none">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:var(--gold)">
+        <svg width="14" height="14" fill="none" stroke="var(--bg)" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8l3 4-3 4-3-4 3-4z"/></svg>
+      </div>
+      <span class="display text-xl text-white tracking-wide">FOOTBALL<span class="gold-text">ELITE</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="nav-link text-sm font-medium hover:text-white transition-colors" style="color:var(--muted)">Home</a>
+      <a href="week1.html" class="nav-link text-sm font-medium hover:text-white transition-colors" style="color:var(--muted)">Week 1</a>
+      <a href="week2.html" class="nav-link active text-sm font-medium transition-colors" style="color:var(--gold)">Week 2</a>
+      <a href="index.html" class="btn-gold px-5 py-2.5 text-sm inline-block">← Back to Home</a>
+    </nav>
+    <button id="ham" class="md:hidden p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mob" class="md:hidden border-t border-white/5" style="background:rgba(6,8,16,.97)">
+    <div class="px-5 py-4 flex flex-col gap-1">
+      <a href="index.html" class="py-3 px-3 text-sm font-medium text-white/50 hover:text-white hover:bg-white/4 rounded-lg transition-colors">Home</a>
+      <a href="week1.html" class="py-3 px-3 text-sm font-medium text-white/50 hover:text-white hover:bg-white/4 rounded-lg transition-colors">Week 1</a>
+      <a href="week2.html" class="py-3 px-3 text-sm font-semibold rounded-lg" style="color:var(--gold);background:var(--golddim)">Week 2</a>
+      <a href="index.html" class="mt-2 btn-gold text-center py-3 text-sm inline-block rounded-lg">← Back to Home</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<main>
+<section class="pt-32 pb-16 relative overflow-hidden" style="background:var(--sur)">
+  <div class="absolute inset-0" style="background:radial-gradient(ellipse 65% 65% at 65% 35%,rgba(255,184,0,.06) 0%,transparent 65%)"></div>
+  <div class="relative max-w-6xl mx-auto px-5 md:px-10">
+    <div class="tag-gold mb-6">Days 8–14 · Week 2 of 2 · STRIKER PHASE</div>
+    <h1 class="display text-6xl md:text-8xl text-white leading-[.92] mb-5">WEEK 2<br/><span class="gold-text">STRIKER MASTERY</span></h1>
+    <p class="text-base leading-relaxed max-w-2xl mb-8" style="color:var(--muted)">You've built the technical foundation. Now you forge the striker instinct. Morning sessions dial up explosive power and elite mobility. Afternoon sessions are exclusively striker-focused — positioning, finishing, weak-foot goals, movement, and link-up play. This is your becoming.</p>
+    <div class="flex flex-wrap gap-6 mb-10">
+      <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#FF8C00"></div><span class="text-sm text-white/60">Morning — Explosive Conditioning + Advanced Mobility</span></div>
+      <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:var(--gold)"></div><span class="text-sm text-white/60">Afternoon — Striker Specific Football Training</span></div>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <a href="#day8" class="timer-badge hover:text-white transition-colors">Day 8</a>
+      <a href="#day9" class="timer-badge hover:text-white transition-colors">Day 9</a>
+      <a href="#day10" class="timer-badge hover:text-white transition-colors">Day 10</a>
+      <a href="#day11" class="timer-badge hover:text-white transition-colors">Day 11</a>
+      <a href="#day12" class="timer-badge hover:text-white transition-colors">Day 12</a>
+      <a href="#day13" class="timer-badge hover:text-white transition-colors">Day 13</a>
+      <a href="#day14" class="timer-badge hover:text-white transition-colors">Day 14</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEFT FOOT REMINDER -->
+<div style="background:var(--golddim);border-bottom:1px solid var(--goldbdr)">
+  <div class="max-w-6xl mx-auto px-5 md:px-10 py-4 flex items-start gap-3">
+    <span style="color:var(--gold);font-size:1.1rem;margin-top:2px">🎯</span>
+    <p class="text-sm" style="color:rgba(255,255,255,.75)"><strong style="color:var(--gold)">Week 2 Left Foot Standard:</strong> Your left foot must now be performing at 70% of right foot level. Every 🦶 drill is still left-foot first. Week 2 striker drills add LEFT FOOT finishing as a non-negotiable. No right-foot shortcuts.</p>
+  </div>
+</div>
+
+<!-- ═══ DAY 8 ═══ -->
+<section id="day8" class="py-16 max-w-6xl mx-auto px-5 md:px-10">
+  <div class="flex items-center gap-4 mb-8 reveal">
+    <div class="display text-6xl" style="color:var(--gold)">08</div>
+    <div><h2 class="display text-3xl text-white">MONDAY — STRIKER AWAKENING</h2><p class="text-sm" style="color:var(--muted)">Week 2 begins. The striker mentality starts now.</p></div>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- MORNING -->
+    <div class="day-card reveal d1">
+      <div class="session-header" style="background:rgba(255,140,0,.06);border-bottom-color:rgba(255,140,0,.12)">
+        <div class="tag-orange mb-3">🌅 Morning · 55–60 min</div>
+        <h3 class="display text-2xl text-white">EXPLOSIVE POWER + ADVANCED MOBILITY</h3>
+        <p class="text-xs mt-2" style="color:var(--muted)">Week 2 conditioning is harder. Longer sets, shorter rest, advanced movements.</p>
+      </div>
+      <div class="session-body">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold)">Explosive Warm-Up — 8 min</p>
+        <div class="space-y-2 mb-6">
+          <div class="exercise-item"><div class="ex-num">1</div><div><div class="text-sm text-white font-medium">A-Skip Drill <span class="timer-badge ml-2">3×30 sec</span></div><div class="text-xs mt-1" style="color:var(--muted)">Drive knee up, skip forward. This is the same warm-up used by Olympic sprinters. Activates hip flexors and improves stride mechanics — directly increases your sprint speed.</div></div></div>
+          <div class="exercise-item"><div class="ex-num">2</div><div><div class="text-sm text-white font-medium">B-Skip + Leg Extension <span class="timer-badge ml-2">3×20</span></div><div class="text-xs mt-1" style="color:var(--muted)">A-skip but extend the raised leg forward at the top. Hamstring activation at speed. Prevents pulls and builds stride extension.</div></div></div>
+          <div class="exercise-item"><div class="ex-num">3</div><div><div class="text-sm text-white font-medium">Explosive Hip Rotations (standing) <span class="timer-badge ml-2">20 each direction</span></div><div class="text-xs mt-1" style="color:var(--muted)">Arms extended, rapidly rotate hips side to side. Warms up rotation muscles used in shots, turns, and crosses.</div></div></div>
+        </div>
+
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold)">Explosive Conditioning — 32 min</p>
+        <div class="space-y-2 mb-6">
+          <div class="exercise-item"><div class="ex-num">A</div><div><div class="text-sm text-white font-medium">Depth Drop to Jump <span class="timer-badge ml-2">4×8 reps · 75s rest</span></div><div class="text-xs mt-1" style="color:var(--muted)">Step off a 20-30cm surface, land on both feet immediately jump as high as possible. This is reactive strength training — teaches your muscles to absorb and redirect force instantly. Directly improves your heading jump and explosive first step.</div></div></div>
+          <div class="exercise-item"><div class="ex-num">B</div><div><div class="text-sm text-white font-medium">Pistol Squat Negatives 🦶 <span class="timer-badge ml-2">4×6 each leg · 5s down · start LEFT</span></div><div class="text-xs mt-1" style="color:var(--muted)">Single leg squat, go down very slowly (5 seconds), use other foot to help on the way up if needed. The most powerful single-leg exercise. Builds the quad and glute strength of your weak leg to match your strong leg.</div></div></div>
+          <div class="exercise-item"><div class="ex-num">C</div><div><div class="text-sm text-white font-medium">Explosive Lateral Bound 🦶 <span class="timer-badge ml-2">4×8 bounds each direction · land LEFT first</span></div><div class="text-xs mt-1" style="color:var(--muted)">Single leg bound sideways as far as possible, stick the landing on one foot. Left foot landing = balance and strength work. Direct transfer to Doku's lateral cuts. Stick landing for 2 seconds before next bound.</div></div></div>
+          <div class="exercise-item"><div class="ex-num">D</div><div><div class="text-sm text-white font-medium">Tuck Jumps <span class="timer-badge ml-2">3×10 · 60s rest</span></div><div class="text-xs mt-1" style="color:var(--muted)">Jump and pull knees to chest mid-air. Land soft. Builds vertical leap power critical for aerial striker duels.</div></div></div>
+          <div class="exercise-item"><div class="ex-num">E</div><div><div class="text-sm text-white font-medium">Nordic Hamstring Curls <span class="timer-badge ml-2">3×8 reps — SLOW and controlled</span></div><div class="text-xs mt-1" style="color:var(--muted)">Kneel with feet anchored under something heavy, arms crossed, slowly lower your body toward floor using hamstrings. The #1 hamstring injury prevention exercise used by professional clubs worldwide. Essential for any player who sprints.</div></div></div>
+        </div>
+
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold)">Advanced Mobility Protocol — 15 min</p>
+        <div class="space-y-2">
+          <div class="stretch-item"><div class="st-dot" style="background:var(--gold)"></div><div><div class="text-sm text-white font-medium">Couch Stretch (advanced hip flexor) <span class="timer-badge ml-2">90 sec each side</span></div><div class="text-xs mt-1" style="color:var(--muted)">Rear shin vertical on wall, front leg forward at 90°. This is the deepest hip flexor stretch. Unlocks maximum stride length and shooting power. Professional clubs use this daily. Push gently — don't arch your back.</div></div></div>
+          <div class="stretch-item"><div class="st-dot" style="background:var(--gold)"></div><div><div class="text-sm text-white font-medium">Deep Squat Ankle Mobility <span class="timer-badge ml-2">2 min continuous movement</span></div><div class="text-xs mt-1" style="color:var(--muted)">Hold bottom of squat, shift weight side to side, rock forward on toes. Improves ankle dorsiflexion — critical for landing safely, planting to shoot, and changing direction without injury.</div></div></div>
+          <div class="stretch-item"><div class="st-dot" style="background:var(--gold)"></div><div><div class="text-sm text-white font-medium">Thoracic Spine Rotation (with arm reach) <span class="timer-badge ml-2">10 each side × 3</span></div><div class="text-xs mt-1" style="color:var(--muted)">Half-kneeling, rotate upper body and reach toward ceiling. Improves upper body rotation for powerful shots and headers. Reduces lower back tension.</div></div></div>
+          <div class="stretch-item"><div class="st-dot" style="background:var(--gold)"></div><div><div class="text-sm text-white font-medium">ITB / Lateral Hip Band Walk (or resistance-free) <span class="timer-badge ml-2">15 steps each direction × 3</span></div><div class="text-xs mt-1" style="color:var(--muted)">Slight squat, step laterally keeping toes forward. Activates glute medius — the muscle that stabilizes your knee. Weak glute medius = knee collapse when landing. This protects your knees from ACL risk.</div></div></div>
+          <div class="stretch-item"><div class="st-dot" style="background:var(--gold)"></div><div><div class="text-sm text-white font-medium">PNF Hamstring Stretch 🦶 <span class="timer-badge ml-2">3 cycles each leg · hold LEFT 5 sec longer</span></div><div class="text-xs mt-1" style="color:var(--muted)">Lie on back, partner holds leg up (or use wall). Tighten hamstring for 6 seconds pushing against resistance, then relax and push leg further. This is the most effective evidence-based stretching method. Each cycle gains 3-5° range of motion.</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTERNOON STRIKER -->
+    <div class="day-card reveal d2">
+      <div class="session-header" style="background:rgba(255,184,0,.05);border-bottom-color:rgba(255,184,0,.15)">
+        <div class="tag-gold mb-3">⚽ Afternoon · 55–60 min</div>
+        <h3 class="display text-2xl text-white">STRIKER POSITIONING + LEFT FOOT FINISHING</h3>
+        <p class="text-xs mt-2" style="color:var(--muted)">World-class strikers know where to be before the ball arrives. That starts today.</p>
+      </div>
+      <div class="session-body">
+        <div class="rounded-xl p-4 mb-6" style="background:var(--golddim);border:1px solid var(--goldbdr)">
+          <div class="text-xs font-bold tracking-widest uppercase mb-2" style="color:var(--gold)">The Striker Mindset</div>
+          <div class="text-xs text-white/65 leading-relaxed">A striker's job is to score. Every movement, every touch, every decision is about creating or taking a goal opportunity. In your space, you'll simulate this mentally on every rep. Act as if a goalkeeper is in front of you. Pick your corner. Be deliberate.</div>
+        </div>
+
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold)">Technical Warm-Up — 5 min</p>
+        <div class="space-y-2 mb-6">
+          <div class="drill-item"><div class="text-sm text-white font-medium">🦶 Left Foot Sole Roll + Burst <span class="timer-badge ml-2">2 min</span></div><div class="text-xs mt-1" style="color:var(--muted)">Roll ball, then suddenly accelerate 2 quick steps. Stop, reset. Simulates receiving and bursting into space. LEFT foot only.</div></div>
+          <div class="drill-item"><div class="text-sm text-white font-medium">Shooting Stance Drill — No ball <span class="timer-badge ml-2">3 min</span></div><div class="text-xs mt-1" style="color:var(--muted)">Practice the plant foot placement and follow-through motion 20 times each foot, no ball. Muscle memory for perfect shooting mechanics. Left foot: toes pointing at target, lean slightly forward, follow through across body.</div></div>
+        </div>
+
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold)">Finishing Drills — 25 min 🦶</p>
+        <div class="space-y-2 mb-6">
+          <div class="drill-item"><div class="text-sm text-white font-medium">🦶 Left Foot Placed Shot (inside) vs wall <span class="timer-badge ml-2">8 min · 60 shots</span></div><div class="text-xs mt-1" style="color:var(--muted)">Plant foot beside ball, inside of left foot, aim for bottom corner (mark a spot on wall). This is a placed finish — not power. Like Olise's famous curling goals. Lock ankle, point toe down and out, smooth contact. Count accurate shots. Target: 70% accuracy by end of session.</div></div>
+          <div class="drill-item"><div class="text-sm text-white font-medium">🦶 Left Foot Power Shot (laces, top corner) <span class="timer-badge ml-2">8 min · 50 shots</span></div><div class="text-xs mt-1" style="color:var(--muted)">Same setup but strike with laces. Aim HIGH on the wall. Full follow-through, land on striking foot. This is how you score from 20 yards out. Build pace — first 20 shots at 70%, final 30 at full power. THIS is the left foot goal.</div></div>
+          <div class="drill-item"><div class="text-sm text-white font-medium">🦶 First Touch → Left Foot Finish <span class="timer-badge ml-2">9 min</span></div><div class="text-xs mt-1" style="color:var(--muted)">Throw ball against wall, control with left foot taking the ball away from wall (set yourself up), then shoot immediately. No second touches — first touch sets up, second touch finishes. This trains the striker's most important skill sequence.</div></div>
+        </div>
+
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold)">Striker Movement Training — 15 min</p>
+        <div class="space-y-2 mb-6">
+          <div class="drill-item"><div class="text-sm text-white font-medium">Third Man Run Simulation <span class="timer-badge ml-2">5 min</span></div><div class="text-xs mt-1" style="color:var(--muted)">In your space, stand at one end. Sprint diagonally to opposite corner (simulate a run in behind). Touch wall, sprint back to original position. Repeat continuously. This trains the "run behind" movement pattern. Off the ball movement IS a skill.</div></div>
+          <div class="drill-item"><div class="text-sm text-white font-medium">🦶 Receive → Turn → Shoot (left foot) <span class="timer-badge ml-2">5 min · 30 reps</span></div><div class="text-xs mt-1" style="color:var(--muted)">Face away from wall. Throw ball over shoulder, turn, control with LEFT foot, shoot immediately. Simulates the striker turning their marker and finishing in one motion — the Kane/Lewandowski move, but with your weak foot.</div></div>
+          <div class="drill-item"><div class="text-sm text-white font-medium">Penalty Spot Ritual (left foot) <span class="timer-badge ml-2">5 min · 20 penalties</span></div><div class="text-xs mt-1" style="color:var(--muted)">Mark a spot 3m from wall. This is your penalty mark. Pre-kick routine: deep breath, pick your corner, don't look at the keeper (wall), step up, LEFT foot. Strike clean, follow through. Mental rehearsal + technical execution. Elite penalty takers visualize before every kick.</div></div>
+        </div>
+
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold)">Weak Foot Juggling Goal — 5 min</p>
+        <div class="drill-item"><div class="text-sm text-white font-medium">🦶 Left Foot Juggling Max Count <span class="timer-badge ml-2">5 min · beat your Day 1 record</span></div><div class="text-xs mt-1" style="color:var(--muted)">Every session ends with left foot juggling. Write your max count. This number should be at least double your Day 1 record. If not — more reps tomorrow.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAYS 9–14 CONDENSED ═══ -->
+<section class="py-8 max-w-6xl mx-auto px-5 md:px-10">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <!-- Day 9 -->
+    <div id="day9" class="day-card reveal d1">
+      <div class="session-header">
+        <div class="tag-blue mb-3">Day 9 · Tuesday</div>
+        <h3 class="display text-2xl text-white">AGILITY + HEADERS & AERIAL</h3>
+      </div>
+      <div class="session-body space-y-5">
+        <div>
+          <div class="tag-orange mb-3">🌅 Morning — 55 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">✦ Agility Ladder patterns (or hand-drawn lines) 15 min — Two feet in/out, single foot hops, crossovers</div>
+            <div class="text-xs text-white/70">✦ Reactive Sprint Starts 3×10m — From various positions (sitting, lying, facing away)</div>
+            <div class="text-xs text-white/70">✦ Jump Squat to Sprint 🦶 4×5 — LEFT foot landing, burst immediately</div>
+            <div class="text-xs text-white/70">✦ Nordic Hamstring Curls 3×8 — Non-negotiable injury prevention</div>
+            <div class="text-xs" style="color:var(--gold)">Stretch: Couch stretch advanced · Ankle circles loaded · Hip 90/90 progression</div>
+          </div>
+        </div>
+        <div>
+          <div class="tag-gold mb-3">⚽ Afternoon — 55 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">🦶 Aerial first touch — throw high, chest or head to control with left foot</div>
+            <div class="text-xs text-white/70">Heading technique — forehead contact, eyes open, snap neck forward</div>
+            <div class="text-xs text-white/70">Headed goal simulation — throw ball up, jump, direct into wall spot</div>
+            <div class="text-xs text-white/70">🦶 Left foot volley — throw ball, strike before it bounces, left foot (50 volleys)</div>
+            <div class="text-xs" style="color:var(--gold)">Focus: Yamal composure — receive aerial ball, control, turn and drive left-foot shot in one motion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 10 -->
+    <div id="day10" class="day-card reveal d2">
+      <div class="session-header">
+        <div class="tag-blue mb-3">Day 10 · Wednesday</div>
+        <h3 class="display text-2xl text-white">LOWER EXPLOSIVE + LINK-UP PLAY</h3>
+      </div>
+      <div class="session-body space-y-5">
+        <div>
+          <div class="tag-orange mb-3">🌅 Morning — 55 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">✦ Single-leg Bounding 🦶 4×6 each — LEFT leg leads. Maximum distance.</div>
+            <div class="text-xs text-white/70">✦ Sprint-Stop-Sprint (10m) 5×3 reps — Deceleration control then burst</div>
+            <div class="text-xs text-white/70">✦ Bulgarian Split Squat Jump 3×8 🦶 — Explosive from bottom of BSS. LEFT first.</div>
+            <div class="text-xs text-white/70">✦ Plank to Push-Up 3×12 — Core to upper transition</div>
+            <div class="text-xs" style="color:var(--gold)">Stretch: Full hip flexor series · Knee health: VMO activation sets · ITB lateral stretch</div>
+          </div>
+        </div>
+        <div>
+          <div class="tag-gold mb-3">⚽ Afternoon — 55 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">🦶 Wall passing combos: 1-2 with left foot return · 30 min · 100 passes</div>
+            <div class="text-xs text-white/70">🦶 Lay-off and shoot: pass to wall left foot, receive, shoot left foot</div>
+            <div class="text-xs text-white/70">Hold-up play: receive ball against wall, hold, turn, drive</div>
+            <div class="text-xs text-white/70">🦶 Quick 1-touch combination → left foot finish</div>
+            <div class="text-xs" style="color:var(--gold)">Focus: Striker combining with teammates — link play, receive, hold, release</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 11 -->
+    <div id="day11" class="day-card reveal d3">
+      <div class="session-header">
+        <div class="tag-blue mb-3">Day 11 · Thursday</div>
+        <h3 class="display text-2xl text-white">POWER ENDURANCE + DRIBBLE TO SHOOT</h3>
+      </div>
+      <div class="session-body space-y-5">
+        <div>
+          <div class="tag-orange mb-3">🌅 Morning — 55 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">✦ Tabata Protocol: 20s work / 10s rest × 8 rounds × 4 exercises</div>
+            <div class="text-xs text-white/70">&nbsp;&nbsp;→ Jump squats · Push-ups · High knees · Lateral bounds</div>
+            <div class="text-xs text-white/70">✦ Slow Nordic Hamstring 3×10 — 8 second lowering phase</div>
+            <div class="text-xs text-white/70">✦ L-sit attempt (between chairs) 3×max hold — Extreme core</div>
+            <div class="text-xs" style="color:var(--gold)">Stretch: Full lower body sequence 15 min · Focus on hamstrings + hip internal rotation</div>
+          </div>
+        </div>
+        <div>
+          <div class="tag-gold mb-3">⚽ Afternoon — 60 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">🦶 Full Neymar skill chain: sole roll → elastico → scissors → burst left and shoot (left foot)</div>
+            <div class="text-xs text-white/70">🦶 Speed dribble to finish: max pace dribble length of space, plant and shoot LEFT</div>
+            <div class="text-xs text-white/70">🦶 Weak foot curling finish — inside of left foot, aimed at top corner mark</div>
+            <div class="text-xs text-white/70">Both feet finishing — alternate 5 left, 5 right, 5 left... total 80 shots</div>
+            <div class="text-xs" style="color:var(--gold)">Focus: Burst from dribble into immediate shot — simulate breaking the defensive line</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 12 -->
+    <div id="day12" class="day-card reveal d4">
+      <div class="session-header">
+        <div class="tag-blue mb-3">Day 12 · Friday</div>
+        <h3 class="display text-2xl text-white">FULL BODY CIRCUIT + POSITIONING MASTERY</h3>
+      </div>
+      <div class="session-body space-y-5">
+        <div>
+          <div class="tag-orange mb-3">🌅 Morning — 55 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">✦ Full Body Circuit (3 rounds, 45s each, 15s rest between)</div>
+            <div class="text-xs text-white/70">&nbsp;&nbsp;→ Squat jumps · Diamond push-ups · Lateral bounds · Tuck jumps · Nordic hamstring</div>
+            <div class="text-xs text-white/70">✦ Single-leg Deadlift 🦶 3×12 — LEFT first. Slow. Feel the hamstring.</div>
+            <div class="text-xs text-white/70">✦ Explosive Step-Up to Balance 🦶 3×10 — LEFT foot on step. Drive knee up at top.</div>
+            <div class="text-xs" style="color:var(--gold)">Stretch: Couch stretch · Figure-4 · Full pigeon progression · Breathwork 5 min</div>
+          </div>
+        </div>
+        <div>
+          <div class="tag-gold mb-3">⚽ Afternoon — 60 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">Off-ball movement patterns: diagonal runs, spin runs, checking away then attacking</div>
+            <div class="text-xs text-white/70">🦶 Receive behind you → spin → left foot finish × 40 reps</div>
+            <div class="text-xs text-white/70">Near-post run simulation: sprint to corner, receive across goal, side foot left foot into wall</div>
+            <div class="text-xs text-white/70">🦶 One-two combination (wall is teammate): pass → receive → shoot left foot (30 combos)</div>
+            <div class="text-xs" style="color:var(--gold)">Focus: Olise-style movement — create the angle, receive on the move, finish first time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 13 -->
+    <div id="day13" class="day-card reveal d1">
+      <div class="session-header">
+        <div class="tag-blue mb-3">Day 13 · Saturday</div>
+        <h3 class="display text-2xl text-white">PRE-FINAL TEST + MENTAL EDGE</h3>
+      </div>
+      <div class="session-body space-y-5">
+        <div>
+          <div class="tag-orange mb-3">🌅 Morning — 50 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">✦ Max effort test day: record ALL personal bests</div>
+            <div class="text-xs text-white/70">&nbsp;&nbsp;→ Max push-ups in 60 sec · Max squats in 60 sec · Max jump height</div>
+            <div class="text-xs text-white/70">✦ Nordic Hamstring 3×10 — mandatory</div>
+            <div class="text-xs text-white/70">✦ Active recovery circuit: light movement, low impact</div>
+            <div class="text-xs" style="color:var(--gold)">Stretch: Full body 15 min · Foam roll · Visualization session — see yourself scoring in a real match</div>
+          </div>
+        </div>
+        <div>
+          <div class="tag-gold mb-3">⚽ Afternoon — 60 min</div>
+          <div class="space-y-1.5">
+            <div class="text-xs text-white/70">🦶 Left foot juggling — beat your Week 1 Day 7 record</div>
+            <div class="text-xs text-white/70">🦶 Full skill chain: every skill from Week 1 → finish with left foot shot</div>
+            <div class="text-xs text-white/70">🦶 Left foot shooting test: 30 placed shots, 30 power shots — count clean finishes</div>
+            <div class="text-xs text-white/70">Combine: dribble → skill → turn → left foot finish (20 complete reps)</div>
+            <div class="text-xs" style="color:var(--gold)">Mental drill: Every shot, shout the corner before you kick it. "BOTTOM LEFT." Commit. Then execute.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 14 -->
+    <div id="day14" class="day-card reveal d2" style="border-color:rgba(255,184,0,.22);background:linear-gradient(160deg,#111722 0%,#19150A 100%)">
+      <div class="session-header" style="background:linear-gradient(135deg,rgba(255,184,0,.08) 0%,transparent 60%)">
+        <div class="tag-gold mb-3">Day 14 · Sunday — THE FINALE 🏆</div>
+        <h3 class="display text-2xl text-white">THE FINAL TEST.<br/><span class="gold-text">PROVE YOURSELF.</span></h3>
+        <p class="text-xs mt-2" style="color:var(--muted)">This is Day 14. The last session of the program. Today you prove how far you've come.</p>
+      </div>
+      <div class="session-body space-y-6">
+        <div>
+          <div class="tag-orange mb-3">🌅 Morning — Final Conditioning Test · 50 min</div>
+          <div class="space-y-1.5 mb-4">
+            <div class="text-xs text-white/70">Record ALL strength metrics — push-ups, squats, jump height, Nordic reps</div>
+            <div class="text-xs text-white/70">🦶 Single-leg squat depth test — how low can LEFT leg go? Compare to Day 1</div>
+            <div class="text-xs text-white/70">Flexibility test: hamstring reach, hip flexor depth, hip rotation range</div>
+            <div class="text-xs text-white/70">Nordic Hamstring 3×10 — always</div>
+          </div>
+          <div class="rounded-xl p-4" style="background:var(--golddim);border:1px solid var(--goldbdr)">
+            <div class="text-xs font-bold tracking-widest uppercase mb-2" style="color:var(--gold)">Expected Results by Day 14</div>
+            <div class="text-xs text-white/60">Hamstring flexibility +20°. Hip mobility significantly improved. Left leg single-leg strength 80%+ of right. Explosive jump increased 5-10%. Core endurance doubled. Zero significant soreness = healthy and ready.</div>
+          </div>
+        </div>
+        <div>
+          <div class="tag-gold mb-3">⚽ Afternoon — The Grand Finale · 60 min</div>
+          <div class="space-y-1.5 mb-4">
+            <div class="text-xs text-white/70">🦶 Left foot juggling max count — this is your final score</div>
+            <div class="text-xs text-white/70">🦶 Left foot passing accuracy: 30 passes — count perfect contacts</div>
+            <div class="text-xs text-white/70">🦶 Left foot shooting: 30 placed + 30 power — accuracy percentage</div>
+            <div class="text-xs text-white/70">Full skill showcase: every dribbling skill in sequence, both feet, no stops</div>
+            <div class="text-xs text-white/70">🦶 Grand finale: 10 complete sequences → skill → turn → left foot goal</div>
+          </div>
+          <div class="rounded-xl p-4" style="background:var(--golddim);border:1px solid var(--goldbdr)">
+            <div class="text-xs font-bold tracking-widest uppercase mb-2" style="color:var(--gold)">Expected Technical Results</div>
+            <div class="text-xs text-white/60">Left foot juggling: 5× your Day 1 count. Left foot feels like a natural option, not a struggle. You have 8+ dribbling skills committed to muscle memory. Your finishing mechanics are clean. You think like a striker. Now go play. Show them what you built.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL MESSAGE -->
+<section class="py-20 text-center" style="background:var(--sur)">
+  <div class="max-w-2xl mx-auto px-5 reveal">
+    <div class="sdiv mx-auto mb-6"></div>
+    <h2 class="display text-5xl md:text-7xl text-white mb-4">14 DAYS DONE.<br/><span class="gold-text">YOU ARE ELITE.</span></h2>
+    <p class="text-sm leading-relaxed mb-6" style="color:var(--muted)">You've trained your weak foot daily. You've built an athletic body from the ground up. You have the technical skills of a player inspired by Neymar, Doku, Olise, and Yamal. You've trained your striker instincts. The only thing left is to take it onto the pitch and show your school, your club, and your city exactly who you are now.</p>
+    <p class="text-base font-bold mb-10" style="color:var(--gold)">Restart Week 1 to keep progressing. The best players never stop training.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="week1.html" class="btn-gold px-10 py-4 text-base inline-block">Restart Program</a>
+      <a href="index.html" class="btn-ghost px-10 py-4 text-base inline-block">Back to Home</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer style="background:#040608;border-top:1px solid rgba(255,255,255,.04)">
+  <div class="max-w-6xl mx-auto px-5 md:px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <div class="display text-xl text-white mb-1">FOOTBALL<span class="gold-text">ELITE</span></div>
+      <div class="text-xs" style="color:rgba(255,255,255,.22)">Week 2 of 2 · Striker Mastery Complete</div>
+    </div>
+    <div class="flex gap-6 text-sm">
+      <a href="index.html" class="text-white/28 hover:text-white transition-colors">Home</a>
+      <a href="week1.html" class="text-white/28 hover:text-white transition-colors">Week 1</a>
+      <a href="week2.html" class="hover:text-white transition-colors" style="color:var(--gold)">Week 2</a>
+    </div>
+    <div class="text-xs" style="color:rgba(255,255,255,.15)">© 2025 Football Elite. Train hard. Stay humble. Score goals.</div>
+  </div>
+</footer>
+
+<script defer>
+  const ham=document.getElementById('ham'),mob=document.getElementById('mob');
+  ham.addEventListener('click',()=>{mob.classList.toggle('open');ham.setAttribute('aria-expanded',mob.classList.contains('open'))});
+  mob.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>mob.classList.remove('open')));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
